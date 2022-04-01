@@ -40,6 +40,13 @@ $(function() {
 		"Carto Light": "http://cartodb-basemaps-c.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
 		"Stamen Toner B&W": "http://a.tile.stamen.com/toner/{z}/{x}/{y}.png",
 
+		"div-5": "",
+
+		"EOX Sentinel-2 Cloudless 2016": "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg",
+		"EOX Sentinel-2 Cloudless 2018": "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2018_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg",
+		"EOX Sentinel-2 Cloudless 2019": "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2019_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg",
+		"EOX Sentinel-2 Cloudless 2020": "https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2020_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg",
+
 	};
 
 	function initializeMap() {
@@ -258,6 +265,11 @@ $(function() {
 	function getGrid(zoomLevel) {
 
 		var bounds = getBounds();
+		let bb = turf.bbox(draw.getAll().features[0]);
+		$("#bl-Lon-box").val(bb[0])
+		$("#bl-Lat-box").val(bb[1])
+		$("#tr-Lon-box").val(bb[2])
+		$("#tr-Lat-box").val(bb[3])
 
 		var rects = [];
 
@@ -304,6 +316,10 @@ $(function() {
 
 	function removeGrid() {
 		removeLayer("grid-preview");
+		$("#bl-Lon-box").val(0);
+		$("#bl-Lat-box").val(0);
+		$("#tr-Lon-box").val(0);
+		$("#tr-Lat-box").val(0);
 	}
 
 	function previewGrid() {

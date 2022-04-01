@@ -1,4 +1,7 @@
 # Map Tiles Downloader
+### Changes in this fork
+ - Includes [pull #14](https://github.com/AliFlux/MapTilesDownloader/pull/14) 'for large number of tiles'
+ - Added [WMTS](https://tiles.maps.eox.at/wmts/1.0.0/WMTSCapabilities.xml) endpoint for [EOX Sentinel-2 cloudless](https://s2maps.eu/). EOX Sentinel-2 is licensed under (CC BY 4.0) for 2016 and (CC BY-NC-SA 4.0) for 2018, 2019 and 2020.
 
 **A super easy to use GUI for downloading map tiles**
 

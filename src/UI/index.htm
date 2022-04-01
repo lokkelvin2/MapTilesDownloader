@@ -63,11 +63,34 @@
 			Select a Region
 		</div>
 
-		<div class='center-align sidebar-section'>
-			<p>
-				<a class="waves-effect waves-light z-depth-0 btn-small orange darken-3" id='rectangle-draw-button'>Draw a rectangle</a>
-			</p>
+		<div class='sidebar-section'>
+			<div class="row">
+				<div class="input-field col s6">
+					<input id="tr-Lat-box" type="text" value='0' readonly/>
+					<label for="tr-Lat-box" class="active">Top-right Lat</label>
+				</div>
+				<div class="input-field col s6">
+					<input id="tr-Lon-box" type="text" value='0' readonly/>
+					<label for="tr-Lon-box" class="active">Top-right Lon</label>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="input-field col s6">
+					<input id="bl-Lat-box" type="text" value='0' readonly/>
+					<label for="bl-Lat-box" class="active">Bot-left Lat</label>
+				</div>
+				<div class="input-field col s6">
+					<input id="bl-Lon-box" type="text" value='0' readonly/>
+					<label for="bl-Lon-box" class="active">Bot-left Lon</label>
+				</div>
+			</div>
+
+			<div class='center-align'>
+					<a class="waves-effect waves-light z-depth-0 btn-small orange darken-3" id='rectangle-draw-button'>Draw a rectangle</a>
+			</div>
 		</div>
+		
 
 		<div class='step-number'>
 			3
