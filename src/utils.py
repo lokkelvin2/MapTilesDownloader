@@ -124,6 +124,9 @@ class Utils:
 		ssl._create_default_https_context = ssl._create_unverified_context
 
 		try:
+			opener = urllib.request.build_opener()
+			opener.addheaders = [('User-agent', "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:99.0) Gecko/20100101 Firefox/99.0")]
+			urllib.request.install_opener(opener)
 			path, response = urllib.request.urlretrieve(url, destination)
 			code = 200
 		except urllib.error.URLError as e:
